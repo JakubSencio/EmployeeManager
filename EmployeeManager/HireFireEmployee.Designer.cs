@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbStartDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbPosition = new System.Windows.Forms.ComboBox();
+            this.tbSalary = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tbSection = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnHireHF = new System.Windows.Forms.Button();
             this.btnFireHF = new System.Windows.Forms.Button();
@@ -55,19 +55,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee ID";
             // 
-            // textBox1
+            // tbID
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbID.Location = new System.Drawing.Point(85, 6);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(126, 20);
+            this.tbID.TabIndex = 1;
             // 
-            // textBox2
+            // tbFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(85, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbFirstName.Location = new System.Drawing.Point(85, 32);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(126, 20);
+            this.tbFirstName.TabIndex = 3;
             // 
             // label2
             // 
@@ -78,12 +78,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "First Name";
             // 
-            // textBox3
+            // tbLastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(85, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 5;
+            this.tbLastName.Location = new System.Drawing.Point(85, 58);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(126, 20);
+            this.tbLastName.TabIndex = 5;
             // 
             // label3
             // 
@@ -103,12 +103,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Position";
             // 
-            // textBox5
+            // tbStartDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(85, 85);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(126, 20);
-            this.textBox5.TabIndex = 9;
+            this.tbStartDate.Location = new System.Drawing.Point(85, 85);
+            this.tbStartDate.Name = "tbStartDate";
+            this.tbStartDate.Size = new System.Drawing.Size(126, 20);
+            this.tbStartDate.TabIndex = 9;
             // 
             // label5
             // 
@@ -119,20 +119,20 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Start Date";
             // 
-            // comboBox1
+            // tbPosition
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 142);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 10;
+            this.tbPosition.FormattingEnabled = true;
+            this.tbPosition.Location = new System.Drawing.Point(85, 142);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(126, 21);
+            this.tbPosition.TabIndex = 10;
             // 
-            // textBox4
+            // tbSalary
             // 
-            this.textBox4.Location = new System.Drawing.Point(85, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 20);
-            this.textBox4.TabIndex = 12;
+            this.tbSalary.Location = new System.Drawing.Point(85, 113);
+            this.tbSalary.Name = "tbSalary";
+            this.tbSalary.Size = new System.Drawing.Size(126, 20);
+            this.tbSalary.TabIndex = 12;
             // 
             // label6
             // 
@@ -143,13 +143,13 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Salary";
             // 
-            // comboBox2
+            // tbSection
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(85, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(126, 21);
-            this.comboBox2.TabIndex = 14;
+            this.tbSection.FormattingEnabled = true;
+            this.tbSection.Location = new System.Drawing.Point(85, 174);
+            this.tbSection.Name = "tbSection";
+            this.tbSection.Size = new System.Drawing.Size(126, 21);
+            this.tbSection.TabIndex = 14;
             // 
             // label7
             // 
@@ -190,19 +190,19 @@
             this.ClientSize = new System.Drawing.Size(243, 266);
             this.Controls.Add(this.btnFireHF);
             this.Controls.Add(this.btnHireHF);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.tbSection);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbSalary);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbPosition);
+            this.Controls.Add(this.tbStartDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.label1);
             this.Name = "HireFireEmployee";
             this.Text = "HireFireEmployee";
@@ -214,18 +214,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbStartDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox tbPosition;
+        private System.Windows.Forms.TextBox tbSalary;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox tbSection;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnHireHF;
         private System.Windows.Forms.Button btnFireHF;
