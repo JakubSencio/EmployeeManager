@@ -28,13 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnHire = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnHire
+            // 
+            this.btnHire.Location = new System.Drawing.Point(100, 524);
+            this.btnHire.Name = "btnHire";
+            this.btnHire.Size = new System.Drawing.Size(101, 39);
+            this.btnHire.TabIndex = 0;
+            this.btnHire.Text = "Hire Employee";
+            this.btnHire.UseVisualStyleBackColor = true;
             // 
             // EmployeeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1077, 575);
+            this.Controls.Add(this.btnHire);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "EmployeeManager";
             this.Text = "E-Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -43,6 +56,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnHire;
     }
 }
 
