@@ -16,7 +16,8 @@ namespace EmployeeManager
         {
             InitializeComponent();
 
-            System.IO.File.Create("C:\\Users\\Jacob\\source\\repos\\EmployeeManager\\Employeers.txt");
+            System.IO.File.Create($@"{System.IO.Path.GetDirectoryName(Application.ExecutablePath)}\Employeers.txt");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
