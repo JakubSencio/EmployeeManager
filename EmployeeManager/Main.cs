@@ -16,9 +16,10 @@ namespace EmployeeManager
         public EmployeeManager()
         {
             InitializeComponent();
-            if (!File.Exists("Employeers.txt"))
+            if (!File.Exists($@"{Path.GetDirectoryName
+                (Application.ExecutablePath)}\Employeers.txt"))
             {
-                File.Create($@"{System.IO.Path.GetDirectoryName
+                File.Create($@"{Path.GetDirectoryName
                 (Application.ExecutablePath)}\Employeers.txt");
             }
         }
