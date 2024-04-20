@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,11 @@ namespace EmployeeManager
         public EmployeeManager()
         {
             InitializeComponent();
-
-            System.IO.File.Create($@"{System.IO.Path.GetDirectoryName(Application.ExecutablePath)}\Employeers.txt");
-
+            if (!File.Exists("Employeers.txt"))
+            {
+                File.Create($@"{System.IO.Path.GetDirectoryName
+                (Application.ExecutablePath)}\Employeers.txt");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
