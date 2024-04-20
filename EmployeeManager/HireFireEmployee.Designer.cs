@@ -42,6 +42,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnHireHF = new System.Windows.Forms.Button();
+            this.btnFireHF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -158,12 +160,36 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Section";
             // 
+            // btnHireHF
+            // 
+            this.btnHireHF.BackColor = System.Drawing.Color.LightGreen;
+            this.btnHireHF.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHireHF.Location = new System.Drawing.Point(117, 215);
+            this.btnHireHF.Name = "btnHireHF";
+            this.btnHireHF.Size = new System.Drawing.Size(94, 39);
+            this.btnHireHF.TabIndex = 15;
+            this.btnHireHF.Text = "Hire";
+            this.btnHireHF.UseVisualStyleBackColor = false;
+            // 
+            // btnFireHF
+            // 
+            this.btnFireHF.BackColor = System.Drawing.Color.LightCoral;
+            this.btnFireHF.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFireHF.Location = new System.Drawing.Point(12, 215);
+            this.btnFireHF.Name = "btnFireHF";
+            this.btnFireHF.Size = new System.Drawing.Size(94, 39);
+            this.btnFireHF.TabIndex = 16;
+            this.btnFireHF.Text = "Fire";
+            this.btnFireHF.UseVisualStyleBackColor = false;
+            // 
             // HireFireEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(243, 219);
+            this.ClientSize = new System.Drawing.Size(243, 266);
+            this.Controls.Add(this.btnFireHF);
+            this.Controls.Add(this.btnHireHF);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox4);
@@ -201,5 +227,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnHireHF;
+        private System.Windows.Forms.Button btnFireHF;
     }
 }
