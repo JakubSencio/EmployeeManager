@@ -15,12 +15,13 @@ namespace EmployeeManager
     {
         public EmployeeManager()
         {
+            var path = $@"{Path.GetDirectoryName
+                (Application.ExecutablePath)}\Employeers.txt";
+
             InitializeComponent();
-            if (!File.Exists($@"{Path.GetDirectoryName
-                (Application.ExecutablePath)}\Employeers.txt"))
+            if (!File.Exists(path))
             {
-                File.Create($@"{Path.GetDirectoryName
-                (Application.ExecutablePath)}\Employeers.txt");
+                File.Create(path);
             }
         }
 
