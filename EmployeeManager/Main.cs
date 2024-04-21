@@ -26,7 +26,13 @@ namespace EmployeeManager
             //}
 
             InitializeComponent();
+            var employees = new List<Employee>();
+            employees.Add(new Employee { FirstName = "Peter" });
+            employees.Add(new Employee { FirstName = "Mark" });
+            employees.Add(new Employee { FirstName = "Steven" });
+            employees.Add(new Employee { FirstName = "Bob" });
 
+            SerializeToFile(employees);
         }
         public void SerializeToFile(List<Employee> employees)
         {
