@@ -14,7 +14,8 @@ namespace EmployeeManager
 {
     public partial class EmployeeManager : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory,"employees.txt");
+        private string _filePath 
+            = Path.Combine(Environment.CurrentDirectory,"employees.txt");
         public EmployeeManager()
         {
             //var path = $@"{Path.GetDirectoryName
@@ -30,8 +31,27 @@ namespace EmployeeManager
         public void SerializeToFile(List<Employee> employees)
         {
             var serializer = new XmlSerializer(typeof(List<Employee>));
-            var streamWriter = new StreamWriter(_filePath);
-            serializer.Serialize();
+            
+            using (var streamWriter = new StreamWriter(_filePath))
+            {
+                serializer.Serialize(streamWriter, employees);
+                streamWriter.Close();
+            }
+        }
+        public List<Employee> DeserializeFromFile()
+        {
+            if(!File.Exists(_filePath))
+            {
+                return new List<Employee>();
+            }
+            var serializer = new XmlSerializer(typeof(List<Employee>));
+
+            using (var streamReader = new StreamReader(_filePath))
+            {
+                var employees = (List<Employee>)serializer.Deserialize(streamReader);
+                streamReader.Close();
+                return employees;
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
