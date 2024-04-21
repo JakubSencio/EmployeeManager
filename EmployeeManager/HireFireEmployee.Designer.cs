@@ -170,6 +170,7 @@
             this.btnHireHF.TabIndex = 15;
             this.btnHireHF.Text = "Hire";
             this.btnHireHF.UseVisualStyleBackColor = false;
+            this.btnHireHF.Click += new System.EventHandler(this.btnHireHF_Click);
             // 
             // btnFireHF
             // 

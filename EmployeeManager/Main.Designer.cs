@@ -93,7 +93,7 @@
             this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiary.Location = new System.Drawing.Point(119, 12);
             this.dgvDiary.Name = "dgvDiary";
-            this.dgvDiary.Size = new System.Drawing.Size(946, 533);
+            this.dgvDiary.Size = new System.Drawing.Size(737, 533);
             this.dgvDiary.TabIndex = 4;
             // 
             // EmployeeManager
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1077, 575);
+            this.ClientSize = new System.Drawing.Size(868, 575);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

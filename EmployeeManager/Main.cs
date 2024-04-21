@@ -18,21 +18,11 @@ namespace EmployeeManager
             = Path.Combine(Environment.CurrentDirectory,"employees.txt");
         public EmployeeManager()
         {
-            //var path = $@"{Path.GetDirectoryName
-            //    (Application.ExecutablePath)}\Employeers.txt";
-            //if (!File.Exists(path))
-            //{
-            //    File.Create(path);
-            //}
-
             InitializeComponent();
-            var employees = new List<Employee>();
-            employees.Add(new Employee { FirstName = "Peter" });
-            employees.Add(new Employee { FirstName = "Mark" });
-            employees.Add(new Employee { FirstName = "Steven" });
-            employees.Add(new Employee { FirstName = "Bob" });
 
-            SerializeToFile(employees);
+            var employees = DeserializeFromFile();
+
+            dgvDiary.DataSource = employees;
         }
         public void SerializeToFile(List<Employee> employees)
         {
@@ -66,7 +56,8 @@ namespace EmployeeManager
 
         private void btnHire_Click(object sender, EventArgs e)
         {
-
+            var hireEmployee = new HireFireEmployee();
+            hireEmployee.ShowDialog();
         }
 
         private void btnFire_Click(object sender, EventArgs e)
@@ -81,7 +72,8 @@ namespace EmployeeManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var employees = DeserializeFromFile();
+            dgvDiary.DataSource = employees;
         }
     }
 }
