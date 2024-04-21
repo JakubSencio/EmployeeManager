@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeManager
 {
-    internal class Employee
+    public class Employee
     {
+        public string FirstName;
+
     }
 }

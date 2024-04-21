@@ -14,20 +14,23 @@ namespace EmployeeManager
 {
     public partial class EmployeeManager : Form
     {
+        private string _filePath;
         public EmployeeManager()
         {
-            var path = $@"{Path.GetDirectoryName
-                (Application.ExecutablePath)}\Employeers.txt";
+            //var path = $@"{Path.GetDirectoryName
+            //    (Application.ExecutablePath)}\Employeers.txt";
+            //if (!File.Exists(path))
+            //{
+            //    File.Create(path);
+            //}
 
             InitializeComponent();
-            if (!File.Exists(path))
-            {
-                File.Create(path);
-            }
+
         }
-        public void SerializeToFile(List <Employee> employees)
+        public void SerializeToFile(List<Employee> employees)
         {
             var serializer = new XmlSerializer(typeof(List<Employee>));
+            var streamWriter = new StreamWriter(_filePath);
             serializer.Serialize();
         }
         private void Form1_Load(object sender, EventArgs e)
