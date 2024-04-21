@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace EmployeeManager
 {
@@ -24,7 +25,11 @@ namespace EmployeeManager
                 File.Create(path);
             }
         }
-
+        public void SerializeToFile(List <Employee> employees)
+        {
+            var serializer = new XmlSerializer(typeof(List<Employee>));
+            serializer.Serialize();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
