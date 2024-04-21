@@ -14,7 +14,7 @@ namespace EmployeeManager
 {
     public partial class EmployeeManager : Form
     {
-        private string _filePath;
+        private string _filePath = Path.Combine(Environment.CurrentDirectory,"employees.txt");
         public EmployeeManager()
         {
             //var path = $@"{Path.GetDirectoryName
