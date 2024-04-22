@@ -78,7 +78,7 @@ namespace EmployeeManager
                 var employees = DeserializeFromFile();
                 employees.RemoveAll(x => x.Id == Convert.ToInt32(selectedEmployee.Cells[0].Value));
                 SerializeToFile(employees);
-                dgvDiary.Refresh();
+                dgvDiary.DataSource = employees;
             }
 
         }
