@@ -67,7 +67,16 @@ namespace EmployeeManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(dgvDiary.SelectedRows.Count  == 0)
+            {
+                MessageBox.Show("Please select employee!");
+                return;
+            }
+            var hireEmployee = new HireFireEmployee(
+                Convert.ToInt32
+                (dgvDiary.SelectedRows[0].Cells[0].Value)
+                );
+            hireEmployee.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)

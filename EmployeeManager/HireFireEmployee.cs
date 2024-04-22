@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,9 +17,25 @@ namespace EmployeeManager
     {
         private string _filePath
         = Path.Combine(Environment.CurrentDirectory, "employees.txt");
-        public HireFireEmployee()
+        public HireFireEmployee(int id = 0)
         {
             InitializeComponent();
+            if(id != 0)
+            {
+                var employees = DeserializeFromFile();
+                var employee = employees.FirstOrDefault(x => x.Id == id);
+                if(employee == null)
+                {
+                    throw new Exception("There is no user with that ID");
+                }
+                tbID.Text = employee.Id.ToString();
+                tbFirstName.Text = employee.FirstName;
+                tbLastName.Text = employee.LastName;
+                tbStartDate.Text = employee.StartDate.ToString();
+                tbSalary.Text = employee.Salary;
+                tbPosition.Text = employee.Position;
+                tbSection.Text = employee.Section; 
+            }
         }
         public void SerializeToFile(List<Employee> employees)
         {
