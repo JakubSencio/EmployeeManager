@@ -18,13 +18,15 @@ namespace EmployeeManager
         private string _filePath
         = Path.Combine(Environment.CurrentDirectory, "employees.txt");
         private int _employeeId;
+        private FileHelper<List<Employee>> _fileHelper = new FileHelper<List<Employee>>
+            (Program.FilePath);
         public HireFireEmployee(int id = 0)
         {
             InitializeComponent();
             _employeeId = id;
             if(id != 0)
             {
-                var employees = DeserializeFromFile();
+                var employees = _fileHelper.DeserializeFromFile();
                 var employee = employees.FirstOrDefault(x => x.Id == id);
                 if(employee == null)
                 {
@@ -41,35 +43,10 @@ namespace EmployeeManager
                 tbFirstName.Select();
             }
         }
-        public void SerializeToFile(List<Employee> employees)
-        {
-            var serializer = new XmlSerializer(typeof(List<Employee>));
-
-            using (var streamWriter = new StreamWriter(_filePath))
-            {
-                serializer.Serialize(streamWriter, employees);
-                streamWriter.Close();
-            }
-        }
-        public List<Employee> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Employee>();
-            }
-            var serializer = new XmlSerializer(typeof(List<Employee>));
-
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var employees = (List<Employee>)serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return employees;
-            }
-        }
 
         private void btnHireHF_Click(object sender, EventArgs e)
         {
-            var employees = DeserializeFromFile();
+            var employees = _fileHelper.DeserializeFromFile();
 
             if (_employeeId != 0)
             {
@@ -96,7 +73,7 @@ namespace EmployeeManager
                 Section = tbSection.Text
             };
             employees.Add(employee);
-            SerializeToFile(employees);
+            _fileHelper.SerializeToFile(employees);
             Close();
         }
 

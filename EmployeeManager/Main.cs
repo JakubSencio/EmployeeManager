@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,14 +17,35 @@ namespace EmployeeManager
     {
         private string _filePath 
             = Path.Combine(Environment.CurrentDirectory,"employees.txt");
+
+        private FileHelper<List<Employee>> _fileHelper = new FileHelper<List<Employee>>
+            (Program.FilePath);
         public EmployeeManager()
         {
             InitializeComponent();
 
-            var employees = DeserializeFromFile();
+            RefreshPanel();
+            SetColumnsHeader();
 
+        }
+
+        private void RefreshPanel()
+        {
+            var employees = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = employees;
         }
+
+        private void SetColumnsHeader()
+        {
+            dgvDiary.Columns[0].HeaderText = "ID";
+            dgvDiary.Columns[1].HeaderText = "First Name";
+            dgvDiary.Columns[2].HeaderText = "Last Name";
+            dgvDiary.Columns[3].HeaderText = "Start Date";
+            dgvDiary.Columns[4].HeaderText = "Salary";
+            dgvDiary.Columns[5].HeaderText = "Position";
+            dgvDiary.Columns[6].HeaderText = "Section";
+        }
+
         public void SerializeToFile(List<Employee> employees)
         {
             var serializer = new XmlSerializer(typeof(List<Employee>));
@@ -58,6 +80,7 @@ namespace EmployeeManager
         {
             var hireEmployee = new HireFireEmployee();
             hireEmployee.ShowDialog();
+
         }
 
         private void btnFire_Click(object sender, EventArgs e)
@@ -75,12 +98,16 @@ namespace EmployeeManager
                 MessageBoxButtons.OKCancel);
             if(confirmDelete == DialogResult.OK)
             {
-                var employees = DeserializeFromFile();
-                employees.RemoveAll(x => x.Id == Convert.ToInt32(selectedEmployee.Cells[0].Value));
-                SerializeToFile(employees);
-                dgvDiary.DataSource = employees;
+                DeleteEmployee(Convert.ToInt32(selectedEmployee.Cells[0].Value));
+                RefreshPanel();
             }
 
+        }
+        private void DeleteEmployee(int id)
+        {
+            var employees = _fileHelper.DeserializeFromFile();
+            employees.RemoveAll(x => x.Id == id);
+            _fileHelper.SerializeToFile(employees);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,8 +126,7 @@ namespace EmployeeManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var employees = DeserializeFromFile();
-            dgvDiary.DataSource = employees;
+            RefreshPanel();
         }
     }
 }
