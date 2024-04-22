@@ -69,8 +69,18 @@ namespace EmployeeManager
             }
 
             var selectedEmployee = dgvDiary.SelectedRows[0];
-            MessageBox.Show("Are you sure? " +
-                { (selectedEmployee.Cells[1].Value.ToString())}
+            var confirmDelete = 
+                MessageBox.Show($"Are you sure?\n{(selectedEmployee.Cells[1].Value.ToString() + " " + selectedEmployee.Cells[2].Value.ToString()).Trim()}",
+                "Deleting employee",
+                MessageBoxButtons.OKCancel);
+            if(confirmDelete == DialogResult.OK)
+            {
+                var employees = DeserializeFromFile();
+                employees.RemoveAll(x => x.Id == Convert.ToInt32(selectedEmployee.Cells[0].Value));
+                SerializeToFile(employees);
+                dgvDiary.Refresh();
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
