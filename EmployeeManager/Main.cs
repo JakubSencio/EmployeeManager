@@ -62,7 +62,15 @@ namespace EmployeeManager
 
         private void btnFire_Click(object sender, EventArgs e)
         {
+            if (dgvDiary.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select employee!");
+                return;
+            }
 
+            var selectedEmployee = dgvDiary.SelectedRows[0];
+            MessageBox.Show("Are you sure? " +
+                { (selectedEmployee.Cells[1].Value.ToString())}
         }
 
         private void button1_Click(object sender, EventArgs e)

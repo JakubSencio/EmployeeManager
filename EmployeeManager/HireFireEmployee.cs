@@ -36,7 +36,9 @@ namespace EmployeeManager
                 tbStartDate.Text = employee.StartDate.ToString();
                 tbSalary.Text = employee.Salary;
                 tbPosition.Text = employee.Position;
-                tbSection.Text = employee.Section; 
+                tbSection.Text = employee.Section;
+
+                tbFirstName.Select();
             }
         }
         public void SerializeToFile(List<Employee> employees)
