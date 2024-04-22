@@ -17,9 +17,11 @@ namespace EmployeeManager
     {
         private string _filePath
         = Path.Combine(Environment.CurrentDirectory, "employees.txt");
+        private int _employeeId;
         public HireFireEmployee(int id = 0)
         {
             InitializeComponent();
+            _employeeId = id;
             if(id != 0)
             {
                 var employees = DeserializeFromFile();
@@ -67,15 +69,23 @@ namespace EmployeeManager
         {
             var employees = DeserializeFromFile();
 
-            var employeeHighestId =
-                employees.OrderByDescending(x => x.Id).FirstOrDefault();
+            if (_employeeId != 0)
+            {
+                employees.RemoveAll(x => x.Id == _employeeId);
+            }
+            else
+            {
 
-            var employeeId = employeeHighestId ==
-                null ? 1 : employeeHighestId.Id + 1;
+                var employeeHighestId =
+                    employees.OrderByDescending(x => x.Id).FirstOrDefault();
+
+                _employeeId = employeeHighestId ==
+                    null ? 1 : employeeHighestId.Id + 1;
+            }
 
             var employee = new Employee
             {
-                Id = employeeId,
+                Id = _employeeId,
                 FirstName = tbFirstName.Text,// startdate salary position section
                 LastName = tbLastName.Text,
                 StartDate = DateTime.Now,
@@ -85,6 +95,11 @@ namespace EmployeeManager
             };
             employees.Add(employee);
             SerializeToFile(employees);
+            Close();
+        }
+
+        private void btnFireHF_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

@@ -182,6 +182,7 @@
             this.btnFireHF.TabIndex = 16;
             this.btnFireHF.Text = "Fire";
             this.btnFireHF.UseVisualStyleBackColor = false;
+            this.btnFireHF.Click += new System.EventHandler(this.btnFireHF_Click);
             // 
             // HireFireEmployee
             // 
