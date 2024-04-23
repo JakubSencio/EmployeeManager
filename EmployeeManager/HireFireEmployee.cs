@@ -32,6 +32,9 @@ namespace EmployeeManager
                 {
                     throw new Exception("There is no user with that ID");
                 }
+
+
+
                 tbID.Text = employee.Id.ToString();
                 tbFirstName.Text = employee.FirstName;
                 tbLastName.Text = employee.LastName;
