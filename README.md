@@ -9,8 +9,9 @@ Through this interface, users can efficiently navigate and access the data neces
 ![image](https://github.com/JakubSencio/EmployeeManager/assets/116436495/8c7a6489-ee6e-4012-812c-a3ba947a753a)
 
 Below is a mini-panel for hiring, editing and deleting employee.
+
 ![image](https://github.com/JakubSencio/EmployeeManager/assets/116436495/d23ae305-db6b-4cc6-86fd-bb43f54a5931)
 ![image](https://github.com/JakubSencio/EmployeeManager/assets/116436495/ea347a73-731c-4ad4-a02a-7c058340a443)
-![image](https://github.com/JakubSencio/EmployeeManager/assets/116436495/1a1e261a-5d5d-475f-8ab4-0d0d67c1cac8)
+
 
 
